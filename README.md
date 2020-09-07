@@ -6,7 +6,7 @@
 
 [lien vers le challenge](https://github.com/becodeorg/CRL-Woods-3.21/tree/master/LearningPath/03.The-Mountain/12.PHP/PHP-Challenges/cogip)
 
-#### évaluation votre projet en fonction de:
+#### Evaluation votre projet en fonction de:
 
 1. Utilisation de différents paramètres d'URL et nom de fichier.
 2. Utilisation du sanitize pour éviter les injections SQL.
