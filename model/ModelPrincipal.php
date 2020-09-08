@@ -1,6 +1,10 @@
 <?php
-    class Db{
+    Abstract class Db{
+        
         private  $db_name, $db_user , $db_pass, $db_host , $bdd;
+
+        public $id;
+        public $table;
         
         public function __construct($db_name , $db_user = "root", $db_pass = "" , $db_host = "localhost"){
             $this->db_name = $db_name;
@@ -8,9 +12,10 @@
             $this->db_pass = $db_pass;
             $this->db_host = $db_host;
         }
-
+        protected $bdd;
 
         public function dbConnect(){
+             $this->bdd = NULL;
             if($this->bdd === null){
                 try{
                     $bdd = new PDO("mysql:host=localhost:3306;dbname=COGYP","root","");
