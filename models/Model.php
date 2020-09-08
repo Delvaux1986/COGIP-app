@@ -1,32 +1,30 @@
 <?php
-    Abstract class Db{
+    Abstract class Model{
         
-        private  $db_name, $db_user , $db_pass, $db_host;
+        private $db_name = "COGIP";
+        private $db_user = "root";
+        private $db_pass =  "";
+        private $db_host = "localhost";
 
         public $id;
         public $table;
         
-        public function __construct($db_name , $db_user = "root", $db_pass = "" , $db_host = "localhost"){
-            $this->db_name = $db_name;
-            $this->db_user = $db_user;
-            $this->db_pass = $db_pass;
-            $this->db_host = $db_host;
-        }
+        
         protected $_bdd;
 
         public function dbConnect(){
              $this->bdd = NULL;
-            if($this->bdd === NULL){
+            
                 try{
-                    $bdd = new PDO("mysql:host=localhost:3306;dbname=COGYP","root","");
-                    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $this->bdd = $bdd;
+                    $this->_bdd = new PDO('mysql:host='.$this->db_host.':3306;dbname='.$this->db_name,$this->db_user,$this->db_pass);
+                    $_bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $this->_bdd->exec('set names utf8');
                     return $this->bdd;
                 }catch(PDOException $e){
                     echo 'Erreur : ' .$e->getMessage();
 
                 }
-            }
+            
             
                 
         }
