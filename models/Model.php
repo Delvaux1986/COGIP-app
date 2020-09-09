@@ -1,7 +1,7 @@
 <?php
     Abstract class Model{
         
-        private $db_name = "COGIP";
+        private $db_name = "cogip";
         private $db_user = "root";
         private $db_pass =  "";
         private $db_host = "localhost";
@@ -13,13 +13,14 @@
         protected $_bdd;
 
         public function dbConnect(){
-             $this->bdd = NULL;
+             $this->_bdd = NULL;
             
                 try{
-                    $this->_bdd = new PDO('mysql:host='.$this->db_host.':3306;dbname='.$this->db_name,$this->db_user,$this->db_pass);
-                    $_bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $this->_bdd = new PDO('mysql:host='.$this->db_host.':3307;dbname=cogip',$this->db_user,$this->db_pass);
+                    $this->_bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    
                     $this->_bdd->exec('set names utf8');
-                    return $this->bdd;
+                    
                 }catch(PDOException $e){
                     echo 'Erreur : ' .$e->getMessage();
 
@@ -39,7 +40,7 @@
         }
         public function getAll(){
             $sql = "SELECT * FROM ".$this->table;
-            $query = $this->dbConnect->prepare($sql);
+            $query = $this->dbConnect()->prepare($sql);
             $query->execute();
             return $query->fetchAll();
         }
