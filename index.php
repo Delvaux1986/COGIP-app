@@ -2,20 +2,21 @@
 // GENERATE CONST CONTAIN PATH TO INDEX.PHP
 define('ROOT' , str_replace('index.php', '' , $_SERVER['SCRIPT_FILENAME']));
 
-die(ROOT);
+require_once(ROOT.'controllers/controller.php');
+require_once(ROOT.'models/model.php');
 
 $params = explode('/', $_GET['p']);
 
-if($params != ""){
-    $controller = ucfirst($params[0]);
+if($params[0] != ""){
+        $controller = ucfirst($params[0]);
 
-    $action = isset($params[1]) ? $params[1] : 'index';
+        $action = isset($params[1]) ? $params[1] : 'index';
 
-    require_once(ROOT.'controllers/'.$controller.'.php');
+        require_once(ROOT.'controllers/'.$controller.'.php');
 
-    $controller = new $controller();
+        $controller = new $controller();
     if(method_exists($controller,$action)){
-    $controller->$action();
+        $controller->$action();
     }else{
         http_response_code(404);
         echo 'La page n\'existe pas';
