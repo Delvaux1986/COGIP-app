@@ -7,7 +7,7 @@
     <title>COGIP</title>
 </head>
 <body>
-    <img src="../../assets/img/becode.png" alt="LOGO COGIP">
+    <img src="../../assets/img/becode.png" alt="LOGO COGIP" class="text-center">
     <?= $content ?>
 </body>
 </html>

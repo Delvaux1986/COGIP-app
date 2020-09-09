@@ -8,6 +8,7 @@
 
         public $id;
         public $table;
+        public $content;
         
         
         protected $_bdd;

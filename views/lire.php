@@ -1,2 +1,2 @@
-<h2><a href="/lire/<?= $contact['id'] ?>"><?= $contact['firstname'] ?> </a></h2>
-<p><?= $contact['lastname'] ?> </p>
+<h2><a href="/lire/<?= $contact['ID_contact'] ?>"><?= $contact['Firstname'] ?> </a></h2>
+<p><?= $contact['Lastname'] ?> </p>
