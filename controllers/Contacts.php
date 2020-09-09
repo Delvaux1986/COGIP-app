@@ -3,15 +3,15 @@
         public function index(){
             echo 'Hello World !!!';
             $this->loadModel('Contact');
-            $contact = $this->Contact->getAll();
+            $contacts = $this->Contacts->getAll();
             
         }
         public function lire(string $slug){
             $this->loadModel('Contact');
 
-            $contact = $this->Contact->findBySlug($slug);
+            $contacts = $this->Contacts->findBySlug($slug);
 
-            $this->render('lire' , compact('contact'));
+            $this->render('lire' , compact('contacts'));
         }
     }
     
