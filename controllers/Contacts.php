@@ -1,13 +1,16 @@
 <?php
     class Contacts extends Controller{
+        public $contacts;
+        
+        
         public function index(){
             echo 'Hello World !!!';
-            $this->loadModel('Contact');
+            $this->loadModel('Contacts');
             $contacts = $this->Contacts->getAll();
             
         }
         public function lire(string $slug){
-            $this->loadModel('Contact');
+            $this->loadModel('Contacts');
 
             $contacts = $this->Contacts->findBySlug($slug);
 
