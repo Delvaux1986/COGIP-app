@@ -6,16 +6,14 @@
                 include(ROOT.'models/'.$model.'.php');
                 $this->model = new $model();
             }
-            // public function render(string $fichier , array $data = []){
-            //     extract($data);
-
-            //     //START BUFFERING
-            //     ob_start();
-
-            //     require_once(ROOT.'views/'.strtolower(get_class($this)).'/'.$fichier.'.php');
-
-            //     $content = ob_get_clean();
+            public function render(string $fichier, array $data = []){
+                //START BUFFERING
                 
-            //     require_once(ROOT.'views/layouts/default.php');
-            // }
+                ob_start();
+                extract($data);
+                require_once(ROOT.'views/'.$fichier.'.php');
+                $view = ob_get_clean();
+                require_once(ROOT.'views/layouts/default.php');
+                return $view;
+            }
     }

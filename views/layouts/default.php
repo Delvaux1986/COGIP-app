@@ -9,7 +9,7 @@
 </head>
 <body>
     <h2 class="text-center text-info">Cogip Project</h2>
-        <img src="../assets/img/becode.png" alt="LOGO COGIP">
+        <img src="../../assets/img/becode.png" alt="LOGO COGIP">
             
 </body>
 </html>
