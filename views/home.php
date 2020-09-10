@@ -1,6 +1,6 @@
 
 <section class="col-md-6 offset-md-3 mt-5 rounded border">
-<h2 class="text-center text-info">Liste des Contacts</h2>
+<h2 class="text-center text-info">Welcome to the COGIP</h2>
 
 <table class="table ">
             <thead>
@@ -14,15 +14,16 @@
             </thead>
             <tbody>
                 <?php
-                    require_once(ROOT.'controllers/Contacts.php');
+                    require_once(ROOT.'controllers/Home.php');
+                    var_dump($content);
                     
-                    foreach($contacts as $contact){
+                    foreach($content as $content){
                     echo '<tr>';
-                    echo '<th ><a href="" >'.$contact['ID_Contact'].'</th>';
-                    echo '<th >'.$contact['Firstname'].'</th>';
-                    echo '<th >'.$contact['Lastname'].'</th>';
-                    echo '<th >'.$contact['Email'].'</th>';
-                    echo '<th >'.$contact['Phone'].'</a></th>'; 
+                    echo '<th ><a href="" >'.$content['ID_Contact'].'</th>';
+                    echo '<th >'.$content['Firstname'].'</th>';
+                    echo '<th >'.$content['Lastname'].'</th>';
+                    echo '<th >'.$content['Email'].'</th>';
+                    echo '<th >'.$content['Phone'].'</a></th>'; 
                     echo '</tr>';
                 }
                      ?>
