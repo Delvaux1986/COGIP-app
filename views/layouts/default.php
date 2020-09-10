@@ -8,8 +8,11 @@
     <title>COGIP</title>
 </head>
 <body>
-    <h2 class="text-center text-info">Cogip Project</h2>
-        <img src="../../assets/img/becode.png" alt="LOGO COGIP">
-            
+    
+        <section class="text-center">
+            <h2 class="text-info">Cogip Project</h2>
+        
+                <img src="../assets/img/becode.png" alt="LOGO COGIP" class="">
+        </section>    
 </body>
 </html>

@@ -14,6 +14,7 @@
                 require_once(ROOT.'views/'.$fichier.'.php');
                 $view = ob_get_clean();
                 require_once(ROOT.'views/layouts/default.php');
+                require_once(ROOT.'views/menu.php');
                 return $view;
             }
     }

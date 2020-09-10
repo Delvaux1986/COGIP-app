@@ -38,11 +38,12 @@
         
             return $donnees; 
         }
-        public function getAll(){
+        public function SelectAll(){
             $sql = "SELECT * FROM ".$this->table;
-            $query = $this->dbConnect()->prepare($sql);
+            $query = $this->bdd->prepare($sql);
             $query->execute();
-            return $query->fetchAll();
+            return $query->fetchAll(PDO::FETCH_ASSOC);    
         }
+    
     }
 ?>

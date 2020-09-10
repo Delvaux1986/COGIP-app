@@ -4,6 +4,7 @@ define('ROOT' , str_replace('index.php', '' , $_SERVER['SCRIPT_FILENAME']));
 
 require_once(ROOT.'controllers/Controller.php');
 require_once(ROOT.'models/Model.php');
+include(ROOT.'views/menu.php');
 
 $params = explode('/', $_GET['p']);
 
