@@ -5,7 +5,10 @@
             public function loadModel(string $model){
                 include(ROOT.'models/'.$model.'.php');
                 $this->model = new $model();
+                return $this->model;
             }
+
+            
             public function render(string $fichier, array $data = []){
                 //START BUFFERING
                 
