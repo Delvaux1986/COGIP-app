@@ -8,19 +8,19 @@
 
         public $id;
         public $table;
+        public $content;
         
         
-        protected $_bdd;
+        protected $bdd;
 
         public function dbConnect(){
              $this->_bdd = NULL;
             
                 try{
-                    $this->_bdd = new PDO('mysql:host='.$this->db_host.':3307;dbname=cogip',$this->db_user,$this->db_pass);
-                    $this->_bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    
-                    $this->_bdd->exec('set names utf8');
-                    
+                    $this->bdd = new PDO('mysql:host='.$this->db_host.':3306;dbname='.$this->db_name,$this->db_user,$this->db_pass);
+                    $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $this->bdd->exec('set names utf8');
+                        return $this->bdd;
                 }catch(PDOException $e){
                     echo 'Erreur : ' .$e->getMessage();
 
@@ -38,11 +38,13 @@
         
             return $donnees; 
         }
-        public function getAll(){
+        public function SelectAll(){
             $sql = "SELECT * FROM ".$this->table;
-            $query = $this->dbConnect()->prepare($sql);
+            $query = $this->bdd->prepare($sql);
             $query->execute();
-            return $query->fetchAll();
+            return $query->fetchAll(PDO::FETCH_ASSOC);    
         }
+        
+    
     }
 ?>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,7 +8,11 @@
     <title>COGIP</title>
 </head>
 <body>
-    <img src="../../assets/img/becode.png" alt="LOGO COGIP">
-    <?= $content ?>
+    
+        <section class="text-center">
+            <h2 class="text-info">Cogip Project</h2>
+        
+                <img src="../assets/img/becode.png" alt="LOGO COGIP" class="">
+        </section>    
 </body>
 </html>

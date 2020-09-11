@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3307
--- Généré le : lun. 07 sep. 2020 à 11:59
--- Version du serveur :  10.4.13-MariaDB
+-- Généré le : mer. 09 sep. 2020 à 08:42
+-- Version du serveur :  10.5.4-MariaDB
 -- Version de PHP : 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -24,59 +24,83 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `clienttypes`
+-- Structure de la table `company`
 --
 
-DROP TABLE IF EXISTS `clienttypes`;
-CREATE TABLE IF NOT EXISTS `clienttypes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `type` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+DROP TABLE IF EXISTS `company`;
+CREATE TABLE IF NOT EXISTS `company` (
+  `ID_Company` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(40) NOT NULL,
+  `Country` varchar(40) NOT NULL,
+  `VAT` varchar(10) NOT NULL,
+  `ID_Type` int(11) NOT NULL,
+  PRIMARY KEY (`ID_Company`),
+  KEY `ID_Type` (`ID_Type`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `companies`
+-- Structure de la table `contact`
 --
 
-DROP TABLE IF EXISTS `companies`;
-CREATE TABLE IF NOT EXISTS `companies` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `compName` varchar(25) NOT NULL,
-  `country` varchar(25) NOT NULL,
-  `VATNumber` int(15) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+DROP TABLE IF EXISTS `contact`;
+CREATE TABLE IF NOT EXISTS `contact` (
+  `ID_Contact` int(11) NOT NULL AUTO_INCREMENT,
+  `Firstname` varchar(40) NOT NULL,
+  `Lastname` varchar(40) NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  `Phone` int(11) NOT NULL,
+  `ID_Company` int(11) NOT NULL,
+  PRIMARY KEY (`ID_Contact`),
+  KEY `ID_Company` (`ID_Company`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `factures`
+-- Structure de la table `invoice`
 --
 
-DROP TABLE IF EXISTS `factures`;
-CREATE TABLE IF NOT EXISTS `factures` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `numFact` int(25) NOT NULL,
-  `dateFact` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+DROP TABLE IF EXISTS `invoice`;
+CREATE TABLE IF NOT EXISTS `invoice` (
+  `ID_Invoice` int(11) NOT NULL AUTO_INCREMENT,
+  `Number_Invoice` int(11) NOT NULL,
+  `Date_Invoice` date NOT NULL,
+  `ID_Company` int(11) NOT NULL,
+  `ID_Contact` int(11) NOT NULL,
+  PRIMARY KEY (`ID_Invoice`),
+  KEY `ID_Company` (`ID_Company`),
+  KEY `ID_Contact` (`ID_Contact`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `people`
+-- Structure de la table `type`
 --
 
-DROP TABLE IF EXISTS `people`;
-CREATE TABLE IF NOT EXISTS `people` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `firstname` varchar(25) NOT NULL,
-  `lastname` varchar(25) NOT NULL,
-  `mail` varchar(80) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+DROP TABLE IF EXISTS `type`;
+CREATE TABLE IF NOT EXISTS `type` (
+  `ID_Type` int(11) NOT NULL AUTO_INCREMENT,
+  `Type_Company` varchar(30) NOT NULL,
+  PRIMARY KEY (`ID_Type`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `ID_User` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(40) NOT NULL,
+  `Hash_Password` varchar(255) NOT NULL,
+  `Profil` varchar(40) NOT NULL,
+  PRIMARY KEY (`ID_User`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
