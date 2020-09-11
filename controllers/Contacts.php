@@ -1,17 +1,18 @@
-<?php
-    class Contacts extends Controller{
-        public function index(){
-            echo 'Hello World !!!';
-            $this->loadModel('Contact');
-            $contacts = $this->Contacts->getAll();
-            
-        }
-        public function lire(string $slug){
-            $this->loadModel('Contact');
-
-            $contacts = $this->Contacts->findBySlug($slug);
-
-            $this->render('lire' , compact('contacts'));
-        }
-    }
+<?php    
     
+    class Contacts extends Controller{
+        
+        public $contacts;
+        
+        public function index(){
+            
+            include(ROOT.'models/Contact.php');
+            $listContact = new Contact();
+            $contacts = $listContact->SelectAll();
+            echo $this->render('contact' , compact('contacts'));
+
+        }
+       
+
+    }
+ 
