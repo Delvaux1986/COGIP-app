@@ -1,5 +1,5 @@
 
-<section class="col-md-6 offset-md-3 mt-5">
+<section class="col-md-6 offset-md-3 mt-5 rounded">
 <h2 class="text-center text-info">Liste des Companies</h2>
 
 <table class="table ">

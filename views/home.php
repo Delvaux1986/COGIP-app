@@ -3,9 +3,9 @@
 <h2 class="text-center text-info">Welcome to the COGIP</h2>
 
 <p class="text-left">Bonjour !</p>
-<table class="table ">
+<table class="table">
             <thead>
-            <h3>Last invoices :</h3>
+            <h3 class="text-center text-success">Last invoices :</h3>
                 <tr>
                     <th>#</th>
                     <th>Invoice number</th>
@@ -34,7 +34,7 @@
 <section class="col-md-6 offset-md-3 mt-5 rounded border">
     <table class="table">
         <thead>
-            <h3>Last contacts :</h3>
+            <h3 class="text-center text-success">Last contacts :</h3>
                 <tr>
                     <th>#</th>
                     <th>Name</th>
@@ -60,7 +60,7 @@
 <section class="col-md-6 offset-md-3 mt-5 rounded border mb-5">
     <table class="table">
         <thead>
-            <h3>Last companies :</h3>
+            <h3 class="text-center text-success">Last companies :</h3>
                 <tr>
                     <th>#</th>
                     <th>Name</th>
