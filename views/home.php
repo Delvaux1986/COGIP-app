@@ -17,6 +17,7 @@
                 <?php
                     require_once(ROOT.'controllers/Home.php');
                     
+                    
                     // var_dump($contentInv);
 
                     foreach($contentInv as $content){
@@ -24,7 +25,7 @@
                     echo '<th ><a href="" >'.$content['ID_Invoice'].'</th></a>';
                     echo '<th >'.$content['Number_Invoice'].'</th>';
                     echo '<th >'.$content['Date_Invoice'].'</th>';
-                    echo '<th >'.$content['ID_Company'].'</th>';
+                    echo '<th >'.$content['Name'].'</th>';
                     echo '</tr>';
                 }
                      ?>
@@ -45,15 +46,18 @@
             </thead>
         <tbody>
             <?php
+                
                 foreach($contentCont as $content){
                     echo '<tr>';
-                    echo '<th><a href="">'.$content['ID_Contact'].'</th></a>';
+                    echo '<th><a href="http://localhost/COGIP-app/Contacts/showContact()">'.$content['ID_Contact'].'</th></a>';
                     echo '<th>'.$content['Firstname']. ' '.$content['Lastname']. '</th>';
                     echo '<th>'.$content['Phone']. '</th>';
                     echo '<th>'.$content['Email']. '</th>';
-                    echo '<th>'.$content['ID_Company'].'</th>';
+                    echo '<th>'.$content['Name'].'</th>';
                     echo '</tr>';
-                }?>
+                    // http://localhost/COGIP-app/contacts/showContact('.$content['ID_Contact'].')
+
+}?>
                 </tbody>
                 </table>
 </section>
@@ -77,7 +81,7 @@
                     echo '<th>'.$content['Name'].  '</th>';
                     echo '<th>'.$content['Country']. '</th>';
                     echo '<th>'.$content['VAT']. '</th>';
-                    echo '<th>'.$content['ID_Type'].'</th>';
+                    echo '<th>'.$content['Type_Company'].'</th>';
                     echo '</tr>';
                 }?>
                 </tbody>
