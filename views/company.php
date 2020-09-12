@@ -1,5 +1,5 @@
 
-<section class="col-md-6 offset-md-3 mt-5 mb-5 rounded border border-primary  bg-light">
+<section class="col-md-6 offset-md-3 mt-5 mb-5 rounded border border-primary justify-content-center align-item-center bg-light container-fluid">
 <h1 class="text-center text-info p-3">Companies's List</h1>
 
 <table class="table ">

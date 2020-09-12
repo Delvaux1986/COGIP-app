@@ -1,6 +1,6 @@
 <h2 class="text-center text-info mt-5">Company</h2>
 
-<section class="col-md-6 offset-md-3 mt-5 mb-5 rounded border border-primary  bg-light">
+<section class="col-md-6 offset-md-3 mt-5 mb-5 rounded border border-primary container-fluid bg-light">
     <table class="table p-5">
         <thead>
            <tr class="text-primary">
@@ -27,7 +27,7 @@
     </table>
 </section>
     <h2 class="text-center text-info mt-5">Company's Invoices</h2>
-<section class="col-md-6 offset-md-3 mt-5 mb-5 rounded border border-primary  bg-light">
+<section class="col-md-6 offset-md-3 mt-5 mb-5 rounded border border-primary container-fluid bg-light">
     
         <table class="table">
                 <thead>

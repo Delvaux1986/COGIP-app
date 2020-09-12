@@ -24,7 +24,7 @@
                     echo '<th >'.$contact['Email'].'</th>';
                     echo '<th >'.$contact['Phone'].'</a></th>'; 
                     echo '</tr>';
-                }
+                }// REMPLACER HREF PAR ROOT 
                      ?>
             </tbody>
                 </table>
