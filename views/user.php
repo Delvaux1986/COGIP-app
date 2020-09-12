@@ -1,4 +1,4 @@
-<section class="col-md-6 offset-md-3 mt-5 rounded border">
+<section class="col-md-6 offset-md-3 mt-5 mb-5 rounded border  bg-light">
 <h2 class="text-center text-info">Contact</h2>
 
     <table class="table ">
@@ -15,15 +15,14 @@
             <tbody>
             <?php
                     require_once(ROOT.'controllers/Contacts.php');
-                    
-                    
-                        
+
                         echo '<tr>';
                         echo '<th >'.$contacts['ID_Contact'].'</th>';
                         echo '<th >'.$contacts['Firstname'].'</th>';
                         echo '<th >'.$contacts['Lastname'].'</th>';
                         echo '<th >'.$contacts['Email'].'</th>';
-                        echo '<th >'.$contacts['Phone'].'</th>'; 
+                        echo '<th >'.$contacts['Phone'].'</th>';
+                        echo '<th >'.$contacts['Name'].'</th>';  
                         echo '</tr>';
                     
                          ?>

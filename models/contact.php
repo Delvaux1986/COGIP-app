@@ -9,7 +9,7 @@ class Contact extends Model{
         
     }
     public function SelectContactFromId($id){
-        $sql = "SELECT * FROM ".$this->table."  WHERE ID_Contact ='".$id."'";
+        $sql = "SELECT ct.ID_Contact, ct.Firstname,ct.Lastname,ct.Email , ct.Phone, com.Name FROM contact as ct left JOIN company as com on ct.ID_Company = com.ID_Company WHERE ID_Contact ='".$id."'";
         $query = $this->bdd->prepare($sql);
         $query->execute();
         return $query->fetch(PDO::FETCH_ASSOC);

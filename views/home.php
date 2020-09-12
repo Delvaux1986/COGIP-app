@@ -1,12 +1,12 @@
 
-<section class="col-md-6 offset-md-3 mt-5 mb-5 rounded border">
-<h2 class="text-center text-info">Welcome to the COGIP</h2>
+<section class="col-md-6 offset-md-3 mt-5 mb-5 rounded border border-primary   bg-light">
+<h1 class="text-center text-info p-4">Welcome to the COGIP</h1>
 
 <p class="text-left">Bonjour !</p>
 <table class="table">
             <thead>
-            <h3 class="text-center text-success">Last invoices :</h3>
-                <tr>
+            <h2 class="text-center text-info p-3">Last invoices </h2>
+                <tr class=" text-primary">
                     <th>#</th>
                     <th>Invoice number</th>
                     <th>Dates</th>
@@ -22,7 +22,7 @@
 
                     foreach($contentInv as $content){
                     echo '<tr>';
-                    echo '<th ><a href="" >'.$content['ID_Invoice'].'</th></a>';
+                    echo '<th ><a href="http://localhost/COGIP-app/companies/showCompany/'.$content['ID_Invoice'].'" >'.$content['ID_Invoice'].'</th></a>';
                     echo '<th >'.$content['Number_Invoice'].'</th>';
                     echo '<th >'.$content['Date_Invoice'].'</th>';
                     echo '<th >'.$content['Name'].'</th>';
@@ -32,11 +32,11 @@
             </tbody>
                 </table>
 </section>
-<section class="col-md-6 offset-md-3 mt-5 rounded border">
+<section class="col-md-6 offset-md-3 mt-5 rounded border border-primary  bg-light">
     <table class="table">
         <thead>
-            <h3 class="text-center text-success">Last contacts :</h3>
-                <tr>
+            <h2 class="text-center text-info p-3">Last contacts </h2>
+                <tr class=" text-primary">
                     <th>#</th>
                     <th>Name</th>
                     <th>Phone</th>
@@ -61,11 +61,11 @@
                 </tbody>
                 </table>
 </section>
-<section class="col-md-6 offset-md-3 mt-5 rounded border mb-5">
+<section class="col-md-6 offset-md-3 mt-5 rounded border border-primary  mb-5   bg-light">
     <table class="table">
         <thead>
-            <h3 class="text-center text-success">Last companies :</h3>
-                <tr>
+            <h2 class="text-center text-info p-3">Last companies </h2>
+                <tr class=" text-primary">
                     <th>#</th>
                     <th>Name</th>
                     <th>TVA</th>
@@ -77,7 +77,7 @@
             <?php
                 foreach($contentComp as $content){
                     echo '<tr>';
-                    echo '<th><a href="">'.$content['ID_Company'].'</th></a>';
+                    echo '<th><a href="http://localhost/COGIP-app/companies/showCompany/'.$content['ID_Company'].'"">'.$content['ID_Company'].'</th></a>';
                     echo '<th>'.$content['Name'].  '</th>';
                     echo '<th>'.$content['Country']. '</th>';
                     echo '<th>'.$content['VAT']. '</th>';

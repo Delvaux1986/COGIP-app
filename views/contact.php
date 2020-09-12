@@ -1,10 +1,10 @@
 
-<section class="col-md-6 offset-md-3 mt-5 rounded border">
-<h2 class="text-center text-info">Liste des Contacts</h2>
+<section class="col-md-6 offset-md-3 mt-5 mb-5 rounded border border-primary   bg-light">
+<h1 class="text-center text-info p-3">Liste des Contacts</h1>
 
 <table class="table ">
             <thead>
-                <tr>
+                <tr class=" text-primary">
                     <th>#</th>
                     <th>Firstname</th>
                     <th>Lastname</th>
@@ -18,7 +18,7 @@
                     
                     foreach($contacts as $contact){
                     echo '<tr>';
-                    echo '<th ><a href="" >'.$contact['ID_Contact'].'</th>';
+                    echo '<th ><a href="http://localhost/COGIP-app/contacts/showContact/'.$contact['ID_Contact'].'" >'.$contact['ID_Contact'].'</th>';
                     echo '<th >'.$contact['Firstname'].'</th>';
                     echo '<th >'.$contact['Lastname'].'</th>';
                     echo '<th >'.$contact['Email'].'</th>';
