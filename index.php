@@ -28,16 +28,18 @@ if($params[0] != ""){
 
         $controller = new $controller();
     if(method_exists($controller,$action)){
-        $controller->$action();
+        unset($params[0]);
+        unset($params[1]);
+        call_user_func_array([$controller , $action ], $params);
     }else{
         http_response_code(404);
         echo 'La page n\'existe pas';
         echo '<meta http-equiv="refresh" content="3;URL=http://localhost/COGIP-app/Home/index">';
     }
 }else{
-    echo '<section class="text-center mt-5">';
-    echo '<a href="http://localhost/COGIP-app/Home/index"><button class="btn btn-info text-center">ENTER<button></a>';
-    echo '</section>';
+        echo '<section class="text-center mt-5">';
+        echo '<a href="http://localhost/COGIP-app/Home/index"><button class="btn btn-info text-center">ENTER<button></a>';
+        echo '</section>';
 }
   
 ?>

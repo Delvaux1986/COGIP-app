@@ -13,14 +13,13 @@
             echo $this->render('contact' , compact('contacts'));
 
         }
-        public function showContact(){
-            include(ROOT.'models/Contact.php');
-            $contact = new Contact();
-            $user = $contact->SelectContactFromId();
-            var_dump($user);
-            echo $this->render('user', compact('user'));
+        public function showContact($id){
+           $user = $this->loadModel('contact');
+           $contacts = $user->SelectContactFromId($id);
+           echo $this->render('user', compact('contacts'));
             
         }
+
 
     }
  

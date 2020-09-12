@@ -15,15 +15,17 @@
             <tbody>
             <?php
                     require_once(ROOT.'controllers/Contacts.php');
-                    foreach($user as $user){
+                    
+                    
+                        
                         echo '<tr>';
-                        echo '<th ><a href="" >'.$user['ID_Contact'].'</th>';
-                        echo '<th >'.$user['Firstname'].'</th>';
-                        echo '<th >'.$user['Lastname'].'</th>';
-                        echo '<th >'.$user['Email'].'</th>';
-                        echo '<th >'.$user['Phone'].'</a></th>'; 
+                        echo '<th >'.$contacts['ID_Contact'].'</th>';
+                        echo '<th >'.$contacts['Firstname'].'</th>';
+                        echo '<th >'.$contacts['Lastname'].'</th>';
+                        echo '<th >'.$contacts['Email'].'</th>';
+                        echo '<th >'.$contacts['Phone'].'</th>'; 
                         echo '</tr>';
-                    }
+                    
                          ?>
                 </tbody>
     </table>

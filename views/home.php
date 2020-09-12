@@ -49,7 +49,7 @@
                 
                 foreach($contentCont as $content){
                     echo '<tr>';
-                    echo '<th><a href="http://localhost/COGIP-app/Contacts/showContact()">'.$content['ID_Contact'].'</th></a>';
+                    echo '<th><a href="http://localhost/COGIP-app/contacts/showContact/'.$content["ID_Contact"].'">'.$content['ID_Contact'].'</th></a>';
                     echo '<th>'.$content['Firstname']. ' '.$content['Lastname']. '</th>';
                     echo '<th>'.$content['Phone']. '</th>';
                     echo '<th>'.$content['Email']. '</th>';
