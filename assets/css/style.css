@@ -1,0 +1,29 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Karma', serif;
+}
+
+.logo-size{
+    height:5em;
+    width:5em;
+    /* margin-right: 28rem; */
+    border-radius: 12px;
+    
+}
+
+@media screen and (max-width:600px){
+
+    .logo-size{
+        height:8em;
+        width:26em;
+        /* margin-right: 28rem; */
+        border-radius: 12px;
+        
+    }
+
+}
+
+.ok{
+color:violet !important;
+}
