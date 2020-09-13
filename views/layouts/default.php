@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="http://localhost/COGIP-app/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Karma:wght@300;400;600;700&display=swap" rel="stylesheet">
     <title>COGIP</title>
 </head>
 <body class="bg-dark text-center m-3">
@@ -25,10 +26,10 @@
                     <li class="nav-item dropdown m-2 btn btn-info ">
                         <a class="nav-link dropdown-toggle font-weight-bold" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Dashboard</a>
-                            <a class="dropdown-item" href="#">New Contact</a>
-                            <a class="dropdown-item" href="#">New Company</a>
-                            <a class="dropdown-item" href="#">New Invoice</a>
+                            <a class="dropdown-item" href="http://localhost/COGIP-app/Admin/DashBoard">Dashboard</a>
+                            <a class="dropdown-item" href="http://localhost/COGIP-app/Admin/NewContact">New Contact</a>
+                            <a class="dropdown-item" href="http://localhost/COGIP-app/Admin/NewCompany">New Company</a>
+                            <a class="dropdown-item" href="http://localhost/COGIP-app/Admin/NewInvoice">New Invoice</a>
                         </div>    
                     </li>
                 </ul>
