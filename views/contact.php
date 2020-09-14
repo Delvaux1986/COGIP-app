@@ -10,6 +10,7 @@
                     <th>Lastname</th>
                     <th>Email</th>
                     <th>Phone</th>
+                    <th>Company</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,10 +23,12 @@
                     echo '<th >'.$contact['Firstname'].'</th>';
                     echo '<th >'.$contact['Lastname'].'</th>';
                     echo '<th >'.$contact['Email'].'</th>';
-                    echo '<th >'.$contact['Phone'].'</a></th>'; 
+                    echo '<th >'.$contact['Phone'].'</th>';
+                    echo '<th >'.$contact['ID_Company'].'</a></th>';  
                     echo '</tr>';
                 }// REMPLACER HREF PAR ROOT 
                      ?>
             </tbody>
                 </table>
                 </section>
+               

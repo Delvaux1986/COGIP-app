@@ -17,7 +17,7 @@
              $this->_bdd = NULL;
             
                 try{
-                    $this->bdd = new PDO('mysql:host='.$this->db_host.':3306;dbname='.$this->db_name,$this->db_user,$this->db_pass);
+                    $this->bdd = new PDO('mysql:host='.$this->db_host.':3307;dbname='.$this->db_name,$this->db_user,$this->db_pass);
                     $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     $this->bdd->exec('set names utf8');
                         return $this->bdd;

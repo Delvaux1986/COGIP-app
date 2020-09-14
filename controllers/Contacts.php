@@ -16,7 +16,8 @@
         public function showContact($id){
            $user = $this->loadModel('contact');
            $contacts = $user->SelectContactFromId($id);
-           echo $this->render('user', compact('contacts'));
+           $invoices = $user->SelectInvoiceForContact($id);
+           echo $this->render('user', compact('contacts','invoices'));
             
         }
 
