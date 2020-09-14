@@ -20,5 +20,11 @@ class Contact extends Model{
         $query->execute();
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function SelectCompForUser(){
+        $sql = "SELECT con.ID_Contact , con.Firstname , con.Lastname , con.Email , con.Phone , com.Name FROM contact as con LEFT JOIN company as com on con.ID_Company = com.ID_Company WHERE con.ID_Company = com.ID_Company";
+        $query = $this->bdd->prepare($sql);
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
     
 }

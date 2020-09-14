@@ -9,8 +9,9 @@
             
             include(ROOT.'models/Contact.php');
             $listContact = new Contact();
-            $contacts = $listContact->SelectAll();
-            echo $this->render('contact' , compact('contacts'));
+            
+            $comp = $listContact->SelectCompForUser();
+            echo $this->render('contact' , compact('comp'));
 
         }
         public function showContact($id){

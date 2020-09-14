@@ -19,7 +19,7 @@
             <nav class="navbar navbar-expand-sm navbar-dark primary-color">
                 <ul class='nav table justify-content-center m-2'>
                     <li class="m-2 btn btn-info "><a  href="http://localhost/COGIP-app/Home/index" class="text-light font-weight-bold nav-link">Home</a></li>
-                    <li class="m-2 btn btn-info "><a  href="http://localhost/COGIP-app/Invoices/index" class="text-light font-weight-bold nav-link">Invoices</a></li>
+                    <li class="m-2 btn btn-info "><a  href="http://localhost/COGIP-app/Invoice/index" class="text-light font-weight-bold nav-link">Invoices</a></li>
                     <li class="m-2 btn btn-info "><a  href="http://localhost/COGIP-app/Companies/index" class="text-light font-weight-bold nav-link">Companies</a></li>
                     <li class="m-2 btn btn-info "><a  href="http://localhost/COGIP-app/Contacts/index" class="text-light font-weight-bold nav-link">Contacts</a></li>
 
