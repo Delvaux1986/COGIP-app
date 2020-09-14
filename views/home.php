@@ -1,4 +1,15 @@
 
+<form action="Adminview.php" method= "POST" class="font-weight-bold text-primary">
+    <input type="text" name="username" value="User Name">
+    <input type="password" name="password" value="Password">
+    <select name="profil" id="profil">
+        <option value="admin">Admin</option>
+        <option value="moderator">Moderator</option>
+    </select>
+    <button type="submit" class="btn btn-info" name="login">Log In</button>
+</form>
+
+
 <section class="col-md-6 offset-md-3 mt-5 mb-5 rounded border border-primary container-fluid bg-light">
     <article class="row">
         <div class="col-md-12 ">

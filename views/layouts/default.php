@@ -1,4 +1,39 @@
 
+<?php
+
+if(isset($_POST['username'],$_POST['password'], $_POST['submitNewContact'])){
+    if ($_POST['username'] == $login[0]['Name'] && $_POST['password'] == $login[0]['Password']) {
+        session_start();
+        $_SESSION['username'] = $_POST['username'];
+        $_SESSION['password'] = $_POST['password'];
+        $_SESSION['profil'] = $_POST['profil'];// Condition to show admin views
+
+        header('location: http://localhost/COGIP-app/Admin/DashBoard');
+    }
+}
+
+
+
+
+
+
+// // Storing sessions data
+// $_SESSION["profil"] = $_POST['profil']; // admin or moderator
+
+
+// // show session variables
+// // print_r($_SESSION);
+
+// // function close session
+// function destroySession() {
+//     if (isset($_SESSION["name"])){ // on submit disconnect
+//         unset($_SESSION["name"]);
+//         session_destroy();
+//         
+//     }
+// }
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
