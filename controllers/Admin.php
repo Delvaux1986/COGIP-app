@@ -4,28 +4,48 @@
         public $admin;
         public $contactArray = [];
 
+        // READ
         public function DashBoard(){
             $dash = $this->loadModel('AdminModel');
             $admin = $dash->GetUser();
             echo $this->render('AdminView', compact('admin'));
         }
-        public function SetPost(){
-            $contactArray = [];
-            array_push($contactArray , $_POST['firstname'] , $_POST['lastname'] , $_POST['Email'] ,$_POST['Phone'] ,$_POST['ID_Company']);
-            return $contactArray;
 
+        public function index(){
+            include(ROOT.'models/Contact.php');
+            $listContact = new Contact();
+            $contacts = $listContact->SelectAll();
+            echo $contacts;
         }
         
+        // CREATE
         public function NewContact(){
-            $contact = SetPost();
-
-
-            // return array;
+                $cont = $this->loadModel('AdminModel');
+                $AddContact = $cont->AddContactToDb();
+                echo $this->render('newContact', compact('AddContact'));
+                // header('location: http://localhost/COGIP-app/Contacts/index');
         }
+
         public function NewCompany(){
-
+            $comp = $this->loadModel('AdminModel');
+            $AddCompany = $comp->AddCompanyToDb();
+            echo $this->render('newCompany', compact('AddCompany'));
         }
-        public function NewInvoice(){
 
+        public function NewInvoice(){
+            $inv = $this->loadModel('AdminModel');
+            $AddInvoice = $inv->AddInvoiceToDb();
+            $listContacts = $inv->GetAllContacts();
+            echo $this->render('newInvoice', compact('listContacts'));
+            
+        }
+
+        // LOGIN
+        public function login() {
+
+            $log = $this->loadModel('AdminModel');
+            $login = $log->findUser();
+            // var_dump($login);
+            echo $this->render('AdminView', compact('login'));
         }
     }
