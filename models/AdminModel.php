@@ -15,13 +15,6 @@
             return $query->fetchAll(PDO::FETCH_ASSOC);
         }
 
-        public function findUser() {
-            $sql = "SELECT * FROM user";
-            $query = $this->bdd->prepare($sql);
-            $query->execute();
-            $result = $query->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
-        }
 
         // Get Contacts to display in form AddInvoice
         public function GetAllContacts() {

@@ -17,7 +17,7 @@
                     
                     foreach($invoices as $inv){
                     echo '<tr>';
-                    echo '<th ><a href="http://localhost/COGIP-app/Invoice/ShowInvoice/'.$inv['ID_Invoice'].'" >'.$inv['ID_Invoice'].'</th>';
+                    echo '<th ><a href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Invoice/ShowInvoice/'.$inv['ID_Invoice'].'" >'.$inv['ID_Invoice'].'</th>';
                     echo '<th >'.$inv['Number_Invoice'].'</th>';
                     echo '<th >'.$inv['Date_Invoice'].'</th>';
                     echo '<th >'.$inv['Name'].'</th>'; 

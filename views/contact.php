@@ -19,7 +19,7 @@
                     
                     foreach($comp as $com){
                     echo '<tr>';
-                    echo '<th ><a href="http://localhost/COGIP-app/contacts/showContact/'.$com['ID_Contact'].'" >'.$com['ID_Contact'].'</th>';
+                    echo '<th ><a href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/contacts/showContact/'.$com['ID_Contact'].'" >'.$com['ID_Contact'].'</th>';
                     echo '<th >'.$com['Firstname'].'</th>';
                     echo '<th >'.$com['Lastname'].'</th>';
                     echo '<th >'.$com['Email'].'</th>';

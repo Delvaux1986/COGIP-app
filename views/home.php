@@ -1,9 +1,10 @@
 
 <section class="col-md-6 offset-md-3 mt-5 mb-5 rounded border border-primary container-fluid bg-light">
-    <form action="#" method="POST">
+    <form action="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Admin/login" method="POST" class =" mt-4">
                 <input type="text" name="Login" placeholder="Login">
                     <input type="password" name="Password" placeholder="Password">
-                <input type="submit" value="Envoyer">
+                <input type="submit" value="Envoyer" class="btn btn-info">
+                <a href="#" alt="inscription">Inscription</a>
     </form>
     <article class="row">
         <div class="col-md-12 ">
@@ -15,7 +16,7 @@
   <path d="M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-2zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-4z"/>
 </svg></h1>
 
-        <h3 class="text-center p-1">Hello dear {{ admin.name }}!</h3>
+        <h3 class="text-center p-1">Hello dear !</h3>
             <table class="table table-sm-responsive">
                 <thead>
                 <h2 class="text-center text-info pt-3">Last invoices </h2>
@@ -31,7 +32,7 @@
                         require_once(ROOT.'controllers/Home.php');
                         foreach($contentInv as $content){
                             echo '<tr class="d-flex flex-wrap justify-content-center align-item-center">';
-                            echo '<th ><a href="http://localhost/COGIP-app/companies/showCompany/'.$content['ID_Invoice'].'" >'.$content['ID_Invoice'].'</th></a>';
+                            echo '<th ><a href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Invoice/ShowInvoice/'.$content['ID_Invoice'].'" >'.$content['ID_Invoice'].'</th></a>';
                             echo '<th >'.$content['Number_Invoice'].'</th>';
                             echo '<th >'.$content['Date_Invoice'].'</th>';
                             echo '<th >'.$content['Name'].'</th>';
@@ -63,7 +64,7 @@
                     
                     foreach($contentCont as $content){
                         echo '<tr class="d-flex flex-wrap justify-content-center align-item-center">';
-                        echo '<th><a href="http://localhost/COGIP-app/contacts/showContact/'.$content["ID_Contact"].'">'.$content['ID_Contact'].'</th></a>';
+                        echo '<th><a href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Contacts/showContact/'.$content["ID_Contact"].'">'.$content['ID_Contact'].'</th></a>';
                         echo '<th>'.$content['Firstname']. ' '.$content['Lastname']. '</th>';
                         echo '<th>'.$content['Phone']. '</th>';
                         echo '<th>'.$content['Email']. '</th>';
@@ -93,7 +94,7 @@
             <?php
                 foreach($contentComp as $content){
                     echo '<tr class="d-flex flex-wrap justify-content-center align-item-center">';
-                    echo '<th><a href="http://localhost/COGIP-app/companies/showCompany/'.$content['ID_Company'].'"">'.$content['ID_Company'].'</th></a>';
+                    echo '<th><a href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Companies/showCompany/'.$content['ID_Company'].'">'.$content['ID_Company'].'</th></a>';
                     echo '<th>'.$content['Name'].  '</th>';
                     echo '<th>'.$content['Country']. '</th>';// REMPLACER HREF PAR ROOT 
                     echo '<th>'.$content['VAT']. '</th>';

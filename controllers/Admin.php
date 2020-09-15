@@ -44,8 +44,18 @@
         public function login() {
 
             $log = $this->loadModel('AdminModel');
-            $login = $log->findUser();
+            $login = $log->GetUser();
+            
+            if(in_array($_POST['login'] , $login ) == TRUE && in_array(array($_POST['password']) , $login) == TRUE){
+                ECHO 'YOU ARE LOGGED !!!!!!!!!!!!!!!!!!!';
+                $_SESSION['Admin'] = "logged";
+            }else{
+                echo "Login or password Wrong !!!";
+            }
+            var_dump(in_array($_POST['login'] , $login ));
+            var_dump(in_array($_POST['password'] , $login));
             // var_dump($login);
-            echo $this->render('AdminView', compact('login'));
-        }
+            // echo $this->render('AdminView', compact('login'));
+        
     }
+}

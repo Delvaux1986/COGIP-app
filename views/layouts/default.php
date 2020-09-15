@@ -1,11 +1,11 @@
-<?php  session_start();?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://localhost/COGIP-app/assets/css/style.css">
+    <link rel="stylesheet" href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Karma:wght@300;400;600;700&display=swap" rel="stylesheet">
     <title>COGIP</title>
 </head>
@@ -18,18 +18,18 @@
         <article>
             <nav class="navbar navbar-expand-sm navbar-dark primary-color">
                 <ul class='nav table justify-content-center m-2'>
-                    <li class="m-2 btn btn-info "><a  href="http://localhost/COGIP-app/Home/index" class="text-light font-weight-bold nav-link">Home</a></li>
-                    <li class="m-2 btn btn-info "><a  href="http://localhost/COGIP-app/Invoice/index" class="text-light font-weight-bold nav-link">Invoices</a></li>
-                    <li class="m-2 btn btn-info "><a  href="http://localhost/COGIP-app/Companies/index" class="text-light font-weight-bold nav-link">Companies</a></li>
-                    <li class="m-2 btn btn-info "><a  href="http://localhost/COGIP-app/Contacts/index" class="text-light font-weight-bold nav-link">Contacts</a></li>
+                    <li class="m-2 btn btn-info "><a  href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Home/index" class="text-light font-weight-bold nav-link">Home</a></li>
+                    <li class="m-2 btn btn-info "><a  href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Invoice/index" class="text-light font-weight-bold nav-link">Invoices</a></li>
+                    <li class="m-2 btn btn-info "><a  href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Companies/index" class="text-light font-weight-bold nav-link">Companies</a></li>
+                    <li class="m-2 btn btn-info "><a  href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Contacts/index" class="text-light font-weight-bold nav-link">Contacts</a></li>
 
                     <li class="nav-item dropdown m-2 btn btn-info ">
                         <a class="nav-link dropdown-toggle font-weight-bold" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="http://localhost/COGIP-app/Admin/DashBoard">Dashboard</a>
-                            <a class="dropdown-item" href="http://localhost/COGIP-app/Admin/NewContact">New Contact</a>
-                            <a class="dropdown-item" href="http://localhost/COGIP-app/Admin/NewCompany">New Company</a>
-                            <a class="dropdown-item" href="http://localhost/COGIP-app/Admin/NewInvoice">New Invoice</a>
+                            <a class="dropdown-item" href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Admin/DashBoard">Dashboard</a>
+                            <a class="dropdown-item" href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Admin/NewContact">New Contact</a>
+                            <a class="dropdown-item" href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Admin/NewCompany">New Company</a>
+                            <a class="dropdown-item" href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Admin/NewInvoice">New Invoice</a>
                         </div>    
                     </li>
                 </ul>
