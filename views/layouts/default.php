@@ -1,7 +1,10 @@
-
 <?php
 
-if(isset($_POST['username'],$_POST['password'], $_POST['submitNewContact'])){
+// Verify if session active
+session_start();
+
+// Create session login
+if(isset($_POST['username'],$_POST['password'], $_POST['login'])){
     if ($_POST['username'] == $login[0]['Name'] && $_POST['password'] == $login[0]['Password']) {
         session_start();
         $_SESSION['username'] = $_POST['username'];
@@ -12,8 +15,18 @@ if(isset($_POST['username'],$_POST['password'], $_POST['submitNewContact'])){
     }
 }
 
+// Removing session data ?
+// if(isset($_SESSION["username"])){
+//     unset($_SESSION["username"]);
+//     unset($_SESSION["password"]);
+//     unset($_SESSION["profil"]);
+// }
 
-
+// Logout
+if(isset($_POST['logout'])) {
+    session_unset();
+    session_destroy();
+}
 
 
 

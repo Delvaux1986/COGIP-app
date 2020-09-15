@@ -4,36 +4,43 @@
         public $admin;
         public $contactArray = [];
 
+        // READ
         public function DashBoard(){
             $dash = $this->loadModel('AdminModel');
             $admin = $dash->GetUser();
             echo $this->render('AdminView', compact('admin'));
         }
 
-        public function SetPost(){
-            $contactArray = [];
-            array_push($contactArray , $_POST['firstname'] , $_POST['lastname'] , $_POST['email'] ,$_POST['phone'] ,$_POST['idComp']);
-            return $contactArray;
-
+        public function index(){
+            include(ROOT.'models/Contact.php');
+            $listContact = new Contact();
+            $contacts = $listContact->SelectAll();
+            echo $contacts;
         }
         
         // CREATE
         public function NewContact(){
-            if (isset($_POST['submitNewContact'])) {
-                $contact = SetPost();
-                // call method MODEL AddContactToDb()
-                
-                // return to page ???
-            }
-            // return array;
+                $cont = $this->loadModel('AdminModel');
+                $AddContact = $cont->AddContactToDb();
+                echo $this->render('newContact', compact('AddContact'));
+                // header('location: http://localhost/COGIP-app/Contacts/index');
         }
+
         public function NewCompany(){
-
+            $comp = $this->loadModel('AdminModel');
+            $AddCompany = $comp->AddCompanyToDb();
+            echo $this->render('newCompany', compact('AddCompany'));
         }
+
         public function NewInvoice(){
-
+            $inv = $this->loadModel('AdminModel');
+            $AddInvoice = $inv->AddInvoiceToDb();
+            $listContacts = $inv->GetAllContacts();
+            echo $this->render('newInvoice', compact('listContacts'));
+            
         }
 
+        // LOGIN
         public function login() {
 
             $log = $this->loadModel('AdminModel');
@@ -41,6 +48,8 @@
             // var_dump($login);
             echo $this->render('AdminView', compact('login'));
         }
+
+        //LOGOUT
 
 
 
