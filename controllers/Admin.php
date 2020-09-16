@@ -19,40 +19,30 @@
         }
         
         // CREATE
-        public function NewContact(){
-            if($_SESSION['TypeUser'] === "Admin"){    
+        public function NewContact(){    
                 $cont = $this->loadModel('AdminModel');
                 $AddContact = $cont->AddContactToDb();
                 echo $this->render('newContact', compact('AddContact'));
-            }else{
-                echo 'You are not Connected ';
-                echo '<meta http-equiv="refresh" content="4; url='.URL.'Home/index">';
-            }
         }
 
         public function NewCompany(){
-            if($_SESSION['TypeUser'] === "Admin"){
                 $comp = $this->loadModel('AdminModel');
                 $AddCompany = $comp->AddCompanyToDb();
                 echo $this->render('newCompany', compact('AddCompany'));
-            }else{
-                var_dump($_SESSION['TypeUser']);
-                echo 'You are not Connected ';
-                echo '<meta http-equiv="refresh" content="4; url='.URL.'Home/index">';
-            }
             
         }
 
         public function NewInvoice(){
-            if($_SESSION['TypeUser'] === "Admin"){
+            
                 $inv = $this->loadModel('AdminModel');
                 $AddInvoice = $inv->AddInvoiceToDb();
                 $listContacts = $inv->GetAllContacts();
                 echo $this->render('newInvoice', compact('listContacts'));
-            }else{
-                echo 'You are not Connected ';
-                echo '<meta http-equiv="refresh" content="4; url='.URL.'Home/index">';
-            }
+        }
+        // DELETE FROM ID 
+
+        public function DeleteFromId($id){
+            
         }
 
         // LOGIN
@@ -65,23 +55,30 @@
                        if($log['Name'] == $_POST['login'] && $log['Hash_Password'] == $_POST['password']){
                             session_start(); 
                             $_SESSION['TypeUser'] = $log['Profil'];
-                            Echo "<p class='text-center'>YOU ARE CONNECTED !!!!!!!!</p>";
-                           
+                            
                        }
                    }if($_SESSION['TypeUser'] === "Admin"){
-                        echo '<meta http-equiv="refresh" content="2; url='.URL.'Admin/DashBoard">';
+                        $index = $this->loadModel('Mainpage');
+                        $invoices = $index->GetInvoicesForMain();   
+                        $contacts = $index->GetContactsForMain();
+                        $companies = $index->GetCompanyForMain();
+                        echo $this->render('AdminView' , compact('invoices', 'contacts' , 'companies'));
                    }else if($_SESSION['TypeUser'] === "Modérateur"){
                         echo '<meta http-equiv="refresh" content="2; url='.URL.'Admin/DashBoard">';
                    }else{
-                           echo "<p class='text-center text-danger font-weight-bold mt-5'>Bad Login or Password !!!</p>";
-                           echo '<meta http-equiv="refresh" content="4; url='.URL.'Home/index">';
-                       }
-                //    header("location : https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Admin/DashBoard");
-                   //
-                      
+                        //    echo "<p class='text-center text-danger font-weight-bold mt-5'>Bad Login or Password !!!</p>";
+                        //    echo '<meta http-equiv="refresh" content="2; url='.URL.'Home/index">';
+                   }
                 }
                        
-                    }
+        }
+        // LOG OUT 
+        public function Logout(){
+            session_unset();
+            session_destroy();
+            echo "<meta http-equiv='refresh' content='2; url=https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Home/index'>";
+            }
+        
             
             
                 
