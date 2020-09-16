@@ -25,7 +25,7 @@
             }
             ?>
         </select></br>
-        <?php print_r($listContacts);?>
+       
 
     <button type="submit" class="btn btn-primary" name="submitNewInvoice">Submit</button>
 </form>

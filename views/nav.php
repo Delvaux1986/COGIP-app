@@ -14,7 +14,7 @@
                     <li class="m-2 btn btn-info "><a  href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Contacts/index" class="text-light font-weight-bold nav-link">Contacts</a></li>
 
                 <?php  
-                    if(isset($_SESSION['TypeUser']) && $_SESSION['TypeUser'] === 'Admin'){
+                    if($_SESSION['TypeUser'] === 'Admin'){
                         echo '<li class="nav-item dropdown m-2 btn btn-info ">';
                         echo '<a class="nav-link dropdown-toggle font-weight-bold" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>';
                         echo ' <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">';

@@ -3,20 +3,16 @@
     class Admin extends Controller{
         public $admin;
         public $contactArray = [];
+        
 
         // READ
         public function DashBoard(){
             $dash = $this->loadModel('AdminModel');
-            $admin = $dash->GetUser();
+            $admin = $dash->GetAllContacts();
             echo $this->render('AdminView', compact('admin'));
         }
 
-        public function index(){
-            include(ROOT.'models/Contact.php');
-            $listContact = new Contact();
-            $contacts = $listContact->SelectAll();
-            echo $contacts;
-        }
+        
         
         // CREATE
         public function NewContact(){    
@@ -41,10 +37,21 @@
         }
         // DELETE FROM ID 
 
-        public function DeleteFromId($id){
-            
+        public function DeleteInvoiceFromId($id){
+            $delete = $this->loadModel('AdminModel');
+            $delete->DeleteInvoiceInDbFromId($id);
+            echo '<meta http-equiv="refresh" content="0; url='.URL.'Admin/DashBoard">';
         }
-
+        public function DeleteContactFromId($id){
+            $delete = $this->loadModel('AdminModel');
+            $delete->DeleteContactInDbFromId($id);
+            echo '<meta http-equiv="refresh" content="0; url='.URL.'Admin/DashBoard">';
+        }
+        public function DeleteCompanyFromId($id){
+            $delete = $this->loadModel('AdminModel');
+            $delete->DeleteCompanyInDbFromId($id);
+            echo '<meta http-equiv="refresh" content="0; url='.URL.'Admin/DashBoard">';
+        }
         // LOGIN
         public function login() {
 
@@ -56,8 +63,8 @@
                 }else{    
                     foreach($login as $log){                    
                        if($log['Name'] == $_POST['login'] && $log['Hash_Password'] == $_POST['password']){
-                            session_start(); 
                             $_SESSION['TypeUser'] = $log['Profil'];
+                            
                             
                        }
                    }if($_SESSION['TypeUser'] === "Admin"){
@@ -80,7 +87,7 @@
         public function Logout(){
             session_unset();
             session_destroy();
-            echo "<meta http-equiv='refresh' content='2; url=https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Home/index'>";
+            echo "<meta http-equiv='refresh' content='0; url=https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Home/index'>";
             }
         
             

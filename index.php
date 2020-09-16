@@ -1,7 +1,3 @@
-<?php 
-    session_start();
-    
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +12,7 @@
 <?php
 // GENERATE CONST CONTAIN PATH TO INDEX.PHP
 define('ROOT' , str_replace('index.php', '' , $_SERVER['SCRIPT_FILENAME']));
+define('URL' , 'https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/');
 
 require_once(ROOT.'controllers/Controller.php');
 require_once(ROOT.'models/Model.php');
@@ -38,11 +35,11 @@ if($params[0] != ""){
     }else{
         http_response_code(404);
         echo 'La page n\'existe pas';
-        echo '<meta http-equiv="refresh" content="3;URL=http://localhost/COGIP-app/Home/index">';
+        echo '<meta http-equiv="refresh" content="3;URL="'.URL.'Home/index">';
     }
 }else{
         echo '<section class="text-center mt-5">';
-        echo '<a href="http://localhost/COGIP-app/Home/index"><button class="btn btn-info text-center">ENTER<button></a>';
+        echo '<a href="'.URL.'Home/index"><button class="btn btn-info text-center">ENTER<button></a>';
         echo '</section>';
 }
   

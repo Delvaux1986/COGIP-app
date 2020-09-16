@@ -64,4 +64,23 @@
 
         
         // DELETE (Admin only)
+        public function DeleteInvoiceInDbFromId($id){
+            
+            $sql = "DELETE FROM invoice WHERE ID_Invoice = '".$id."'";
+            $request = $this->bdd->prepare($sql);
+            $request->execute();
+        }
+        public function DeleteContactInDbFromId($id){
+            
+            $sql = "DELETE FROM contact WHERE ID_Contact = '".$id."'";
+            $request = $this->bdd->prepare($sql);
+            $request->execute();
+        }
+        public function DeleteCompanyInDbFromId($id){
+            
+            $sql = "DELETE FROM company WHERE ID_Company = '".$id."'";
+            $request = $this->bdd->prepare($sql);
+            $request->execute();
+        }
+
     }
