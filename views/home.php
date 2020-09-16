@@ -1,9 +1,11 @@
-
+<?php 
+    session_start();
+?>
 <section class="col-md-6 offset-md-3 mt-5 mb-5 rounded border border-primary container-fluid bg-light">
     <form action="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Admin/login" method="POST" class =" mt-4">
-                <input type="text" name="Login" placeholder="Login">
-                    <input type="password" name="Password" placeholder="Password">
-                <input type="submit" value="Envoyer" class="btn btn-info">
+                <input type="text" name="login" placeholder="Login">
+                    <input type="password" name="password" placeholder="Password">
+                <input type="submit" value="Envoyer" name="sendLogin" class="btn btn-info">
                 <a href="#" alt="inscription">Inscription</a>
     </form>
     <article class="row">
@@ -29,6 +31,7 @@
                 </thead>
                 <tbody class="text-justify">
                     <?php
+                        var_dump($_SESSION);
                         require_once(ROOT.'controllers/Home.php');
                         foreach($contentInv as $content){
                             echo '<tr class="d-flex flex-wrap justify-content-center align-item-center">';
