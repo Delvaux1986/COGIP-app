@@ -24,6 +24,7 @@
                 $AddContact = $cont->AddContactToDb();
                 echo $this->render('newContact', compact('AddContact'));
                 // header('location: http://localhost/COGIP-app/Contacts/index');
+                // die();
         }
 
         public function NewCompany(){
