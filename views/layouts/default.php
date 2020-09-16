@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $_SESSION['TypeUser'] = $profil;
+    
 ?>
 <!DOCTYPE html>
 <html lang="fr">

@@ -41,21 +41,20 @@
         public function DeleteInvoiceFromId($id){
             $delete = $this->loadModel('AdminModel');
             $delete->DeleteInvoiceInDbFromId($id);
-            echo '<meta http-equiv="refresh" content="0; url='.URL.'Admin/DashBoard">';
+            echo '<meta http-equiv="refresh" content="0; url='.URL.'Invoice/index">';
         }
         public function DeleteContactFromId($id){
             $delete = $this->loadModel('AdminModel');
             $delete->DeleteContactInDbFromId($id);
-            echo '<meta http-equiv="refresh" content="0; url='.URL.'Admin/DashBoard">';
+            echo '<meta http-equiv="refresh" content="0; url='.URL.'Contacts/index">';
         }
         public function DeleteCompanyFromId($id){
             $delete = $this->loadModel('AdminModel');
             $delete->DeleteCompanyInDbFromId($id);
-            echo '<meta http-equiv="refresh" content="0; url='.URL.'Admin/DashBoard">';
+            echo '<meta http-equiv="refresh" content="0; url='.URL.'Companies/index">';
         }
         // LOGIN
         public function login() {
-
             $log = $this->loadModel('AdminModel');
             $login = $log->GetUser();
             if(isset($_POST['sendLogin'])){
@@ -64,10 +63,10 @@
                 }else{    
                     foreach($login as $log){                    
                        if($log['Name'] == $_POST['login'] && $log['Hash_Password'] == $_POST['password']){
+                            session_unset();
+                            session_start();
                             $_SESSION['TypeUser'] = "Admin";
-                            $_SESSION['ID_Session'] = session_create_id();
-                            
-                            
+                            $_SESSION['ID_Session'] = session_create_id();  
                        }
                    }if($_SESSION['TypeUser'] === "Admin"){
                         $index = $this->loadModel('Mainpage');
@@ -85,7 +84,7 @@
             }
         }    
         
-        // LOG OUT 632b8b574b7ab54a09cf66a66f2e42a7
+        // LOG OUT
         public function Logout(){
             session_unset();
             session_destroy();

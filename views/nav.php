@@ -18,7 +18,6 @@
                         echo '<li class="nav-item dropdown m-2 btn btn-info ">';
                         echo '<a class="nav-link dropdown-toggle font-weight-bold" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>';
                         echo ' <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">';
-                        echo '<a class="dropdown-item" href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Admin/DashBoard">Dashboard</a>';
                         echo '<a class="dropdown-item" href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Admin/NewContact">New Contact</a>';
                         echo '<a class="dropdown-item" href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Admin/NewCompany">New Company</a>';
                         echo '<a class="dropdown-item" href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Admin/NewInvoice">New Invoice</a>';
