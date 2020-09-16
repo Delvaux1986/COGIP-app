@@ -6,13 +6,13 @@
             $this->dbConnect();
         }
         public function GetFiveCompanies(){
-            $req = 'SELECT * FROM company LIMIT 5';
+            $req = 'SELECT * FROM company LIMIT 5 ORDER BY ID_Company ASC';
             $show = $this->bdd->prepare($req);
             $show->execute();
             return $show->fetchAll(PDO::FETCH_ASSOC);
         }
         public function SelectCompanyFromId($id){
-            $sql = "SELECT com.ID_Company , com.Name , com.Country , com.VAT , typ.Type_Company FROM company as com left JOIN type as typ on com.ID_Type = typ.ID_Type WHERE ID_Company ='".$id."'";
+            $sql = "SELECT com.ID_Company , com.Name , com.Country , com.VAT , typ.Type_Company FROM company as com left JOIN type as typ on com.ID_Type = typ.ID_Type WHERE ID_Company ='".$id."' ORDER BY ID_Company DESC";
             $query = $this->bdd->prepare($sql);
             $query->execute();
             return $query->fetch(PDO::FETCH_ASSOC);

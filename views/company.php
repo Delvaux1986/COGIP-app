@@ -17,7 +17,7 @@
                     
                     foreach($companies as $comp){
                     echo '<tr>';
-                    echo '<th ><a href="http://localhost/COGIP-app/Companies/showCompany/'.$comp['ID_Company'].'" >'.$comp['ID_Company'].'</th>';
+                    echo '<th ><a href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Companies/showCompany/'.$comp['ID_Company'].'" >'.$comp['ID_Company'].'</th>';
                     echo '<th >'.$comp['Name'].'</th>';
                     echo '<th >'.$comp['Country'].'</th>';
                     echo '<th >'.$comp['VAT'].'</th>'; 

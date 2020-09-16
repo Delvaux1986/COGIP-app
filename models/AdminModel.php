@@ -25,7 +25,7 @@
 
         // Get Contacts to display in form AddInvoice
         public function GetAllContacts() {
-            $sql = "SELECT * FROM contact";
+            $sql = "SELECT * FROM ".$this->table ;
             $query = $this->bdd->prepare($sql);
             $query->execute();
             return $query->fetchAll(PDO::FETCH_ASSOC); 

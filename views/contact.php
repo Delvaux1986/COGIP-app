@@ -10,22 +10,25 @@
                     <th>Lastname</th>
                     <th>Email</th>
                     <th>Phone</th>
+                    <th>Company</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                     require_once(ROOT.'controllers/Contacts.php');
                     
-                    foreach($contacts as $contact){
+                    foreach($comp as $com){
                     echo '<tr>';
-                    echo '<th ><a href="http://localhost/COGIP-app/contacts/showContact/'.$contact['ID_Contact'].'" >'.$contact['ID_Contact'].'</th>';
-                    echo '<th >'.$contact['Firstname'].'</th>';
-                    echo '<th >'.$contact['Lastname'].'</th>';
-                    echo '<th >'.$contact['Email'].'</th>';
-                    echo '<th >'.$contact['Phone'].'</a></th>'; 
+                    echo '<th ><a href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/contacts/showContact/'.$com['ID_Contact'].'" >'.$com['ID_Contact'].'</th>';
+                    echo '<th >'.$com['Firstname'].'</th>';
+                    echo '<th >'.$com['Lastname'].'</th>';
+                    echo '<th >'.$com['Email'].'</th>';
+                    echo '<th >'.$com['Phone'].'</th>';
+                    echo '<th >'.$com['Name'].'</a></th>';  
                     echo '</tr>';
                 }// REMPLACER HREF PAR ROOT 
                      ?>
             </tbody>
                 </table>
                 </section>
+               

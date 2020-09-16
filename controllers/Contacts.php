@@ -9,14 +9,16 @@
             
             include(ROOT.'models/Contact.php');
             $listContact = new Contact();
-            $contacts = $listContact->SelectAll();
-            echo $this->render('contact' , compact('contacts'));
+            
+            $comp = $listContact->SelectCompForUser();
+            echo $this->render('contact' , compact('comp'));
 
         }
         public function showContact($id){
            $user = $this->loadModel('contact');
            $contacts = $user->SelectContactFromId($id);
-           echo $this->render('user', compact('contacts'));
+           $invoices = $user->SelectInvoiceForContact($id);
+           echo $this->render('user', compact('contacts','invoices'));
             
         }
 
