@@ -1,4 +1,6 @@
-
+<?php 
+    session_start();
+?>
 <section class="col-md-6 offset-md-3 mt-5 mb-5 rounded border border-primary   bg-light">
 <h1 class="text-center text-info p-3">Liste des Contacts</h1>
 

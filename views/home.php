@@ -2,15 +2,8 @@
     session_start();
 ?>
 
-<form action="Adminview.php" method= "POST" class="font-weight-bold text-primary">
-    <input type="text" name="username" value="User Name">
-    <input type="password" name="password" value="Password">
-    <button type="submit" class="btn btn-info" name="login">Log In</button>
-</form>
-
-
 <section class="col-md-6 offset-md-3 mt-5 mb-5 rounded border border-primary container-fluid bg-light">
-    <form action="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Admin/login" method="POST" class =" mt-4">
+    <form action="http://localhost/COGIP-app/Admin/login" method="POST" class =" mt-4">
                 <input type="text" name="login" placeholder="Login">
                     <input type="password" name="password" placeholder="Password">
                 <input type="submit" value="Envoyer" name="sendLogin" class="btn btn-info">

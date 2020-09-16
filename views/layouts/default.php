@@ -2,19 +2,6 @@
 
 // Verify if session active
 session_start();
-
-// Create session login
-if(isset($_POST['username'],$_POST['password'], $_POST['login'])){
-    if ($_POST['username'] == $login[0]['Name'] && $_POST['password'] == $login[0]['Password']) {
-        session_start();
-        $_SESSION['username'] = $_POST['username'];
-        $_SESSION['password'] = $_POST['password'];
-        $_SESSION['profil'] = $_POST['profil'];// Condition to show admin views
-
-        header('location: http://localhost/COGIP-app/Admin/DashBoard');
-    }
-}
-
 // Removing session data ?
 // if(isset($_SESSION["username"])){
 //     unset($_SESSION["username"]);
@@ -22,29 +9,6 @@ if(isset($_POST['username'],$_POST['password'], $_POST['login'])){
 //     unset($_SESSION["profil"]);
 // }
 
-// Logout
-if(isset($_POST['logout'])) {
-    session_unset();
-    session_destroy();
-}
-
-
-
-// // Storing sessions data
-// $_SESSION["profil"] = $_POST['profil']; // admin or moderator
-
-
-// // show session variables
-// // print_r($_SESSION);
-
-// // function close session
-// function destroySession() {
-//     if (isset($_SESSION["name"])){ // on submit disconnect
-//         unset($_SESSION["name"]);
-//         session_destroy();
-//         
-//     }
-// }
 
 ?>
 <!DOCTYPE html>
@@ -53,7 +17,7 @@ if(isset($_POST['logout'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/assets/css/style.css">
+    <link rel="stylesheet" href="http://localhost/COGIP-app/assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Karma:wght@300;400;600;700&display=swap" rel="stylesheet">
     <title>COGIP</title>
 </head>
@@ -66,18 +30,29 @@ if(isset($_POST['logout'])) {
         <article>
             <nav class="navbar navbar-expand-sm navbar-dark primary-color">
                 <ul class='nav table justify-content-center m-2'>
-                    <li class="m-2 btn btn-info "><a  href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Home/index" class="text-light font-weight-bold nav-link">Home</a></li>
-                    <li class="m-2 btn btn-info "><a  href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Invoice/index" class="text-light font-weight-bold nav-link">Invoices</a></li>
-                    <li class="m-2 btn btn-info "><a  href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Companies/index" class="text-light font-weight-bold nav-link">Companies</a></li>
-                    <li class="m-2 btn btn-info "><a  href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Contacts/index" class="text-light font-weight-bold nav-link">Contacts</a></li>
+                    <li class="m-2 btn btn-info "><a  href="http://localhost/COGIP-app/Home/index" class="text-light font-weight-bold nav-link">Home</a></li>
+                    <li class="m-2 btn btn-info "><a  href="http://localhost/COGIP-app/Invoice/index" class="text-light font-weight-bold nav-link">Invoices</a></li>
+                    <li class="m-2 btn btn-info "><a  href="http://localhost/COGIP-app/Companies/index" class="text-light font-weight-bold nav-link">Companies</a></li>
+                    <li class="m-2 btn btn-info "><a  href="http://localhost/COGIP-app/Contacts/index" class="text-light font-weight-bold nav-link">Contacts</a></li>
 
-                    <li class="nav-item dropdown m-2 btn btn-info ">
-                        <a class="nav-link dropdown-toggle font-weight-bold" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
-                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Admin/DashBoard">Dashboard</a>
-                            <a class="dropdown-item" href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Admin/NewContact">New Contact</a>
-                            <a class="dropdown-item" href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Admin/NewCompany">New Company</a>
-                            <a class="dropdown-item" href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Admin/NewInvoice">New Invoice</a>
+                    <?php
+                        require_once(ROOT.'controllers/Admin.php');
+                        if ($_SESSION['TypeUser'] == 'Admin' || $_SESSION['TypeUser'] == 'Moderator') {
+                            echo '<li class="nav-item dropdown m-2 btn btn-info ">';
+                            echo '<a class="nav-link dropdown-toggle font-weight-bold" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>';
+                            echo '<div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">';
+                            echo '<a class="dropdown-item" href="http://localhost/COGIP-app/Admin/DashBoard">Dashboard</a>';
+                            echo '<a class="dropdown-item" href="http://localhost/COGIP-app/Admin/NewContact">New Contact</a>';
+                            echo '<a class="dropdown-item" href="http://localhost/COGIP-app/Admin/NewCompany">New Company</a>';
+                            echo '<a class="dropdown-item" href="http://localhost/COGIP-app/Admin/NewInvoice">New Invoice</a>';
+                            echo '<a class="dropdown-item" href="http://localhost/COGIP-app/Admin/LogOut">Log Out</a>';
+                            echo '</div>';    
+                            echo '</li>';
+                        } else {
+                            echo '<li class="nav-item dropdown m-2 btn btn-info "><a class="dropdown-item" href="http://localhost/COGIP-app/Home/index">Log In</a></li>';
+                        }
+                    ?>
+                            
                         </div>    
                     </li>
                 </ul>

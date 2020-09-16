@@ -68,7 +68,6 @@
                     if($log['Name'] == $_POST['login'] && $log['Hash_Password'] == $_POST['password']){
                         session_start(); 
                         $_SESSION['TypeUser'] = $log['Profil'];
-                        Echo "<p class='text-center'>YOU ARE CONNECTED !!!!!!!!</p>";
                     }
                 }
                 if($_SESSION['TypeUser'] === "Admin"){
@@ -84,6 +83,11 @@
         }
 
         //LOGOUT
+        public function LogOut() {
+            session_unset();
+            session_destroy();
+            echo '<meta http-equiv="refresh" content="4; url=http://localhost/COGIP-app/Home/index">';
+            }
 
 
     }
