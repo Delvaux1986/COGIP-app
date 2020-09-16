@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+    
+?>
 <h2 class="text-center text-info mt-5">Company</h2>
 
 <section class="col-md-6 offset-md-3 mt-5 mb-5 rounded border border-primary container-fluid bg-light">

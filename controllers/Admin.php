@@ -50,7 +50,10 @@
 
             $log = $this->loadModel('AdminModel');
             $login = $log->GetUser();
-                if(isset($_POST['login']) && isset($_POST['password'])){
+            if(isset($_POST['sendLogin'])){
+                if(empty($_POST['login']) || empty($_POST['password'])){
+                    echo '<meta http-equiv="refresh" content="2; url='.URL.'Home/index">';
+                }else{    
                     foreach($login as $log){                    
                        if($log['Name'] == $_POST['login'] && $log['Hash_Password'] == $_POST['password']){
                             session_start(); 
@@ -66,12 +69,13 @@
                    }else if($_SESSION['TypeUser'] === "Modérateur"){
                         echo '<meta http-equiv="refresh" content="2; url='.URL.'Admin/DashBoard">';
                    }else{
-                        //    echo "<p class='text-center text-danger font-weight-bold mt-5'>Bad Login or Password !!!</p>";
-                        //    echo '<meta http-equiv="refresh" content="2; url='.URL.'Home/index">';
+                           echo "<p class='text-center text-danger font-weight-bold mt-5'>Bad Login or Password !!!</p>";
+                           echo '<meta http-equiv="refresh" content="2; url='.URL.'Home/index">';
                    }
                 }
-                       
-        }
+            }
+        }    
+        
         // LOG OUT 
         public function Logout(){
             session_unset();

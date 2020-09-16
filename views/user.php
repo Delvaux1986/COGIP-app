@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+    
+?>
 <section class="col-md-6 offset-md-3 mt-5 mb-5 rounded border  bg-light">
 <h2 class="text-center text-info">Contact</h2>
 
