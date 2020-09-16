@@ -1,5 +1,6 @@
 <?php    
-    
+    session_start();
+
     class Companies extends Controller{
         
         public $companies;

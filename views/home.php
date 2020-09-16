@@ -33,7 +33,9 @@
                 </thead>
                 <tbody class="text-justify">
                     <?php
-
+                        
+                        echo session_name().'<br>';
+                        var_dump($_SESSION['TypeUser']); 
                         require_once(ROOT.'controllers/Home.php');
                         foreach($contentInv as $content){
                             echo '<tr class="d-flex flex-wrap justify-content-center align-item-center">';

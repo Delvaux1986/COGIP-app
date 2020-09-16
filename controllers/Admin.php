@@ -1,5 +1,6 @@
 <?php    
-    
+   session_start();
+
     class Admin extends Controller{
         public $admin;
         public $contactArray = [];
@@ -63,7 +64,8 @@
                 }else{    
                     foreach($login as $log){                    
                        if($log['Name'] == $_POST['login'] && $log['Hash_Password'] == $_POST['password']){
-                            $_SESSION['TypeUser'] = $log['Profil'];
+                            $_SESSION['TypeUser'] = "Admin";
+                            $_SESSION['ID_Session'] = session_create_id();
                             
                             
                        }
@@ -83,7 +85,7 @@
             }
         }    
         
-        // LOG OUT 
+        // LOG OUT 632b8b574b7ab54a09cf66a66f2e42a7
         public function Logout(){
             session_unset();
             session_destroy();

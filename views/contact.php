@@ -19,7 +19,6 @@
             <tbody>
                 <?php
                     require_once(ROOT.'controllers/Contacts.php');
-                    
                     foreach($comp as $com){
                     echo '<tr>';
                     echo '<th ><a href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/contacts/showContact/'.$com['ID_Contact'].'" >'.$com['ID_Contact'].'</th>';

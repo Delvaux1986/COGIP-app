@@ -1,6 +1,4 @@
-<?php 
-    session_start();
-?>
+<?php session_start(); ?>
 <section class="col-md-6 offset-md-3 mt-5 mb-5 rounded border border-primary justify-content-center align-item-center bg-light container-fluid">
     <h1 class="text-center text-info p-3">DashBoard</h1>
         <p class="text-left">Welcome <?= $_SESSION['TypeUser']?></P> 
@@ -31,9 +29,9 @@
                     </tr>
                 </thead>
                 <tbody class="text-justify">
-                    <?php  
-                        var_dump($_SESSION['TypeUser']);                      
+                    <?php                     
                         require_once(ROOT.'controllers/Home.php');
+                        var_dump($_SESSION['TypeUser']);
                         foreach($invoices as $content){
                             echo '<tr class="d-flex flex-wrap justify-content-center align-item-center">';
                             echo '<th ><a href="https://delvauxrobby.yj.fr/delvauxrobby.yj.fr/blog/Assets/COGIP-app/Invoice/ShowInvoice/'.$content['ID_Invoice'].'" >'.$content['ID_Invoice'].'</th></a>';
