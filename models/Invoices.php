@@ -9,7 +9,7 @@ class Invoices extends Model{
         
     }
     public function SelectAllInvoicesWithComp(){
-        $sql = "SELECT inv.ID_Invoice , inv.Number_Invoice ,inv.Date_Invoice , com.Name FROM invoice as inv LEFT JOIN company as com on inv.ID_Company = com.ID_Company"; 
+        $sql = "SELECT inv.ID_Invoice , inv.Number_Invoice ,inv.Date_Invoice , com.Name FROM invoice as inv LEFT JOIN company as com on inv.ID_Company = com.ID_Company ORDER BY inv.ID_Invoice ASC"; 
         $query = $this->bdd->prepare($sql);
         $query->execute();
         return $query->fetchAll(PDO::FETCH_ASSOC);

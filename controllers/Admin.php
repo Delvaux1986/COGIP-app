@@ -20,21 +20,30 @@
                 $cont = $this->loadModel('AdminModel');
                 $AddContact = $cont->AddContactToDb();
                 echo $this->render('newContact', compact('AddContact'));
+                if(isset($_POST['submitNewContact'])){
+                    echo '<meta http-equiv="refresh" content="0; url='.URL.'Contacts/index">';
+                }
         }
 
         public function NewCompany(){
                 $comp = $this->loadModel('AdminModel');
                 $AddCompany = $comp->AddCompanyToDb();
                 echo $this->render('newCompany', compact('AddCompany'));
+                if(isset($_POST['submitNewCompany'])){
+                    echo '<meta http-equiv="refresh" content="0; url='.URL.'Companies/index">';
+                }
             
         }
 
         public function NewInvoice(){
-            
                 $inv = $this->loadModel('AdminModel');
-                $AddInvoice = $inv->AddInvoiceToDb();
+                $inv->AddInvoiceToDb();
                 $listContacts = $inv->GetAllContacts();
                 echo $this->render('newInvoice', compact('listContacts'));
+                if (isset($_POST['submitNewInvoice'])) {
+                    echo "BLABLABLABALBALBA";
+                    echo '<meta http-equiv="refresh" content="0; url='.URL.'Invoice/index">';
+                    }
         }
         // DELETE FROM ID 
 
@@ -65,8 +74,7 @@
                        if($log['Name'] == $_POST['login'] && $log['Hash_Password'] == $_POST['password']){
                             session_unset();
                             session_start();
-                            $_SESSION['TypeUser'] = "Admin";
-                            $_SESSION['ID_Session'] = session_create_id();  
+                            $_SESSION['TypeUser'] = $log['Profil']; 
                        }
                    }if($_SESSION['TypeUser'] === "Admin"){
                         $index = $this->loadModel('Mainpage');

@@ -8,7 +8,6 @@
         public $result;
         
         public function __construct(){
-            $this->table = "user";
             $this->dbConnect();
         }
 
@@ -22,7 +21,7 @@
 
         // Get Contacts to display in form AddInvoice
         public function GetAllContacts() {
-            $sql = "SELECT * FROM ".$this->table ;
+            $sql = "SELECT * FROM contact" ;
             $query = $this->bdd->prepare($sql);
             $query->execute();
             return $query->fetchAll(PDO::FETCH_ASSOC); 
@@ -36,6 +35,7 @@
             $inject->execute();
             //header(); REDIRECTION
             echo 'UTILISATEUR AJOUTÉ';
+            
         }
 
         // CREATE
@@ -45,6 +45,7 @@
                 VALUES(?,?,?,?,?)");
                 // $_POST['idComp'] = 1;
                 $sth->execute(array($_POST['firstname'],$_POST['lastname'],$_POST['email'],$_POST['phone'],$_POST['idComp']));
+               
             }
         }
 
@@ -58,9 +59,12 @@
 
         public function AddInvoiceToDb(){
             if (isset($_POST['submitNewInvoice'])) {
-                $sth = $this->bdd->prepare("INSERT INTO invoice (Number_Invoice, Data_Invoice, ID_Company, ID_Contact) 
+                $sth = $this->bdd->prepare("INSERT INTO invoice (Number_Invoice, Date_Invoice, ID_Company, ID_Contact) 
                 VALUES (?,?,?,?)");
                 $sth->execute(array($_POST['numberInvoice'],$_POST['dateInvoice'],$_POST['idComp'],$_POST['idContact']));
+                
+                    echo '<meta http-equiv="refresh" content="0; url='.URL.'Invoice/index">';
+                
             }
         }
         

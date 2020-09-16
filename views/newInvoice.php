@@ -17,11 +17,10 @@
         <select name="idContact">
             <?php
             require_once(ROOT.'controllers/Admin.php');
-            
+                        
             echo '<option value="null">Choose a contact</option>';
-            // echo '<option value="'.$listContacts["ID_Contact"].'">'.$listContacts["ID_Firstname"].' '.$listContacts["ID_Lastname"].'</option>';
             foreach($listContacts as $con) {
-                echo '<option value="'.$con["ID_Contact"].'">'.$con["ID_Firstname"].' '.$con["ID_Lastname"].'</option>';
+                echo '<option value="'.$con["ID_Contact"].'">'.$con["Firstname"].' '.$con["Lastname"].'</option>';
             }
             ?>
         </select></br>
