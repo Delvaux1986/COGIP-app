@@ -16,12 +16,8 @@
             
             
             echo $this->render('home' , compact('contentComp', 'contentCont', 'contentInv') );
-           
-            
-            
-            
 
         }
-       
+        
 
     }

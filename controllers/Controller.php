@@ -1,6 +1,11 @@
 <?php
     abstract class Controller{
            public $contacts;
+           
+
+           public function __construct(){
+               $this->id = $this->id;
+           }
         
             public function loadModel(string $model){
                 include(ROOT.'models/'.$model.'.php');
@@ -17,7 +22,9 @@
                 require_once(ROOT.'views/'.$fichier.'.php');
                 $view = ob_get_clean();
                 require_once(ROOT.'views/layouts/default.php');
-                require_once(ROOT.'views/menu.php');
+                
                 return $view;
             }
+            
+            
     }
