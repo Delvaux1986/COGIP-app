@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 RewriteEngine On
 RewriteRule ^([a-zA-Z0-9\-\_\/]*)$ index.php?p=$1
+=======
+RewriteEngine On
+RewriteRule ^([a-zA-Z0-9\-\_\/]*)$ index.php?p=$1
+>>>>>>> 7c3eeff98348f7710fa023eb7467fc2ca6900250
