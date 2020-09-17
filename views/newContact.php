@@ -16,7 +16,15 @@
     <label for="phone">
         <input type="text" name="phone" placeholder="phone"></label></br>
     <label for="idComp">
-        <input type="number" name="idComp" placeholder="Company" min="1" max="100"></label></br>
+        <select name="idComp">
+            <?php
+            require_once(ROOT.'controllers/Admin.php');            
+            echo '<option value="null">Choose a contact</option>';
+            foreach($listcomp as $con) {
+                echo '<option value='.$con["ID_Company"].'>'.$con["Name"].'</option>';
+            }
+            ?>
+        </select></br>
     <button type="submit" class="btn btn-primary" name="submitNewContact">Submit</button>
 </form>
 

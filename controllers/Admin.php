@@ -16,8 +16,9 @@
         // CREATE
         public function NewContact(){    
                 $cont = $this->loadModel('AdminModel');
-                $AddContact = $cont->AddContactToDb();
-                echo $this->render('newContact', compact('AddContact'));
+                $cont->AddContactToDb();
+                $listcomp = $cont->GetAllCompanies();
+                echo $this->render('newContact', compact('listcomp'));
                 if(isset($_POST['submitNewContact'])){
                     echo '<meta http-equiv="refresh" content="0; url='.URL.'Contacts/index">';
                 }
@@ -60,12 +61,14 @@
             $delete->DeleteCompanyInDbFromId($id);
             echo '<meta http-equiv="refresh" content="0; url='.URL.'Companies/index">';
         }
+
+       
         // LOGIN
         public function login() {
             $log = $this->loadModel('AdminModel');
             $login = $log->GetUser();
             if(isset($_POST['sendLogin'])){
-                if(isset($_POST['login']) || isset($_POST['password'])){
+                if(empty($_POST['login']) || empty($_POST['password'])){
                     echo '<meta http-equiv="refresh" content="2; url='.URL.'Home/index">';
                 }else{    
                     foreach($login as $log){                    
@@ -81,7 +84,7 @@
                         $companies = $index->GetCompanyForMain();
                         echo $this->render('AdminView' , compact('invoices', 'contacts' , 'companies'));
                    }else if($_SESSION['TypeUser'] === "Modérateur"){
-                        echo '<meta http-equiv="refresh" content="2; url='.URL.'Admin/DashBoard">';
+                        echo '<meta http-equiv="refresh" content="2; url='.URL.'Admin/index">';
                    }else{
                            echo "<p class='text-center text-danger font-weight-bold mt-5'>Bad Login or Password !!!</p>";
                            echo '<meta http-equiv="refresh" content="2; url='.URL.'Home/index">';

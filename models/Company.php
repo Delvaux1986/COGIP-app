@@ -7,6 +7,7 @@
             $this->table = "company";
             $this->dbConnect();
         }
+        
         public function GetFiveCompanies(){
             $req = 'SELECT * FROM company LIMIT 5 ORDER BY ID_Company ASC';
             $show = $this->bdd->prepare($req);
@@ -24,5 +25,12 @@
             $query = $this->bdd->prepare($sql);
             $query->execute();
             return $query->fetchAll(PDO::FETCH_ASSOC);
+        }
+        public function SelectCompanyFromName($companyName){
+            $sql = "SELECT *
+                    FROM company  WHERE Name ='".$companyName."'";
+            $query = $this->bdd->prepare($sql);
+            $query->execute();
+            return $query->fetch(PDO::FETCH_ASSOC);
         }
     }

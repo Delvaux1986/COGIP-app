@@ -10,16 +10,21 @@
         public function __construct(){
             $this->dbConnect();
         }
-
+        // GETTER
         public function GetUser(){
             $sql = "SELECT * FROM user";
             $query = $this->bdd->prepare($sql);
             $query->execute();
             return $query->fetchAll(PDO::FETCH_ASSOC);
         }
-
-
-        // Get Contacts to display in form AddInvoice
+        
+        public function GetAllCompanies(){
+            $req = "SELECT * FROM company";
+            $show = $this->bdd->prepare($req);
+            $show->execute();
+            return $show->fetchAll(PDO::FETCH_ASSOC);
+        }
+        
         public function GetAllContacts() {
             $sql = "SELECT * FROM contact" ;
             $query = $this->bdd->prepare($sql);

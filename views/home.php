@@ -32,7 +32,7 @@
                     </tr>
                 </thead>
                 <tbody class="">
-                    <?php 
+                    <?php
                         require_once(ROOT.'controllers/Home.php');
                         foreach($contentInv as $content){
                             echo '<tr class="">';
