@@ -13,8 +13,6 @@
             echo $this->render('AdminView', compact('admin'));
         }
 
-        
-        
         // CREATE
         public function NewContact(){    
                 $cont = $this->loadModel('AdminModel');
@@ -67,7 +65,7 @@
             $log = $this->loadModel('AdminModel');
             $login = $log->GetUser();
             if(isset($_POST['sendLogin'])){
-                if(empty($_POST['login']) || empty($_POST['password'])){
+                if(isset($_POST['login']) || isset($_POST['password'])){
                     echo '<meta http-equiv="refresh" content="2; url='.URL.'Home/index">';
                 }else{    
                     foreach($login as $log){                    
